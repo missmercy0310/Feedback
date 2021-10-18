@@ -1,0 +1,30 @@
+{
+  "name": "feedback",
+  "version": "1.0.0",
+  "description": "A creative writing feedback application based on the structure of facebook",
+  "main": "server.js",
+  "scripts": {
+    "watch-sass": "sass -w sass/src:public/styles",
+    "watch-nodemon": "nodemon server.js",
+    "dev": "open http://localhost:4000/ && concurrently --handle-input -n server,sass -c 'bgGreen.bold,bgMagenta.bold' 'npm:watch-nodemon' 'npm:watch-sass' rs",
+    "devl": "google-chrome http://localhost:4000/ && concurrently --handle-input -n server,sass -c 'bgGreen.bold,bgMagenta.bold' 'npm:watch-nodemon' 'npm:watch-sass' rs",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/missmercy0310/Feedback.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/missmercy0310/Feedback/issues"
+  },
+  "homepage": "https://github.com/missmercy0310/Feedback#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.0.11"
+  }
+}
