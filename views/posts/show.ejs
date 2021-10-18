@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
         <!-- Head partial -->
-  <%- include('../partials/head/_head', { page: 'login' } ) %>
+  <%- include('../partials/head', { page: "Show" } ) %>
 
 <body class="has-navbar-fixed-top">
           <!-- Navbar Partial -->
@@ -12,7 +12,13 @@
       <div class="button-container">
           <button class="like">Like</button>
           <button class="comment">Add Comment</button>
+          <botton class="edit">Edit</botton>
       </div>  
+      <div class="comments-container">
+          <div class="comment-display">
+          </div>
+      </div>
+
     </section>
 </body>
 </html>
