@@ -27,6 +27,9 @@ app.use(methodOverride("_method"));
 
 /* === Middleware === */
 
+// adds routes for navbar
+app.use(require("./utils/navlinks"));
+
 /* === Routes === */
 
 // == Default Routes
