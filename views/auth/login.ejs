@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
         <!-- Head partial -->
-  <%- include('./partials/head', { page: "Login" } ) %>
+  <%- include('../partials/head', { page: "Login" } ) %>
 
 <body class="has-navbar-fixed-top">
           <!-- Navbar Partial -->
@@ -9,8 +9,8 @@
 
     <main class="main">
     <fieldset class="login-form">
-        <input type="text" id="text" placeholder="Username">
-        <input type="text" id="text" placeholder="Email">
+        <input type="text" id="text" placeholder="Username" value="<%= user.username %>">
+        <input type="text" id="text" placeholder="Email" value="<%= user.email %>">
         <button type="submit">Submit</button>
     </fieldset>
     </main>
