@@ -6,9 +6,10 @@
 <body class="has-navbar-fixed-top">
           <!-- Navbar Partial -->
           <%- include('../partials/nav', { routes } ) %>
+  <h2><%= user.username %></h2>
   <div class="post-create-box">
-      <textarea class="post-create-area" placeholder="The story goes..."
-      rows="25" cols="50" maxlength="2500">   
+      <textarea class="post-create-area" placeholder="random text"
+       value="<%= post.content %>" ><%= post.content %>
       </textarea>
       <button type="submit">Submit</button>
   </div>
