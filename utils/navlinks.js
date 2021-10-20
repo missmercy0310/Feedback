@@ -3,6 +3,22 @@ const routes = [
         href: "/",
         title: "Home",
     },
+    {
+        href: "/new",
+        title: "Create Post",
+    },
+    {
+        href: "/edit",
+        title: "Edit",
+    },
+    {
+        href: "/login",
+        title: "Login",
+    },
+    {
+        href: "/signup",
+        title: "Sign Up",
+    }
 ];
 
 module.exports = function navLinks(req, res, next) {
