@@ -8,10 +8,6 @@ const routes = [
         title: "Create Post",
     },
     {
-        href: "/edit",
-        title: "Edit",
-    },
-    {
         href: "/login",
         title: "Login",
     },
