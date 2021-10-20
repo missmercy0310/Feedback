@@ -13,7 +13,7 @@
       <div class="button-container">
           <button class="like">Like</button>
           <button class="comment">Add Comment</button>
-          <button class="edit">Edit</button>
+          <button class="edit" onclick="/posts/edit.ejs" >Edit</button>
           <button>
           <p class="control">
             <form action="/posts/<%= post.id %>?_method=DELETE" method="POST" >
