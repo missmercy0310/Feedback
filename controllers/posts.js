@@ -89,7 +89,7 @@ router.get("/:id/edit", function (req, res, next) {
             return next();
         }
         const context = {
-            product: foundProduct,
+            post: foundPost,
         };
         res.render("posts/edit", context);
     });
