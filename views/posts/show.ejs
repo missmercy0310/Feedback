@@ -6,7 +6,6 @@
 <body class="has-navbar-fixed-top">
           <!-- Navbar Partial -->
           <%- include('../partials/nav', { routes } ) %>
-  <!--<h2><%= user.username %></h2>  -->
   <section class="post-container">
       <div class="post-display-container">
         <p><%= post.content %></p>
@@ -17,8 +16,6 @@
           <botton class="edit">Edit</botton>
       </div>  
       <div class="comments-container">
-          <textarea class="comment-input" placeholder="Leave a comment" value="<%= comment.content %>"></textarea>
-          <div class="comment-display"><%= comment.content %>
           </div>
       </div>
 
