@@ -34,7 +34,7 @@ app.use(require("./utils/navlinks"));
 
 // == Default Routes
 app.get("/", function (req, res, next) {
-  return res.render("home");
+  return res.render("posts/index");
 });
 
 /* === Server Listener === */

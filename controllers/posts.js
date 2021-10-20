@@ -11,7 +11,7 @@ router.get("/", async function (req, res) {
         const context = {
             posts: allPosts,
         };
-        return res.render("posts/index", context);
+        return res.render("/", context);
     } catch (error) {
         console.log(error);
     }
