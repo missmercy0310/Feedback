@@ -7,17 +7,38 @@
           <!-- Navbar Partial -->
           <%- include('./partials/nav', { routes } ) %>
 
-    <main class="main">
-        <section class="homepage-post-container">
-            <div class="homepage-post-display">
+          <section class="hero is-medium has-background-light">
+            <div class="hero-body">
+              <p class="title">All Posts</p>
             </div>
-            <div class="button-container">
-                <button class="like">Like</button>
-                <button class="comment">Add Comment</button>
-                <div class="comments-container">
-                    <div class="comment-display">
-                    </div>
+          </section>
+      
+          <main class="container is-max-widescreen">
+            <div class="columns is-multiline p-5">
+              <!-- Tell user there are no products available -->
+              <% if (posts.length === 0) { %>
+                <div class="notification is-warning">
+                  No posts available.
                 </div>
-    </main>
+              <% } %>
+      
+              <!-- Loop through all posts -->
+              <% for(let i = 0; i < posts.length; i++){ %> <% const post =
+              posts[i] %>
+      
+              <div class="column">
+                <article class="card">
+                  <div class="card-content">
+                    <div class="content">
+                      <h3>
+                        <a href="/<%= post.id %>"><%= post.title %> </a>
+                      </h3>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <% } %>
+            </div>
+          </main>
 </body>
 </html>
