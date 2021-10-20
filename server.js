@@ -33,9 +33,11 @@ app.use(require("./utils/navlinks"));
 /* === Routes === */
 
 // == Default Routes
-app.get("/", function (req, res, next) {
+/* app.get("/", function (req, res, next) {
   return res.render("home");
-});
+}); */
+
+app.use("/", controllers.post);
 
 /* === Server Listener === */
 app.listen(PORT, function () {
