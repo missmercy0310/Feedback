@@ -6,13 +6,35 @@
 <body class="has-navbar-fixed-top">
           <!-- Navbar Partial -->
           <%- include('../partials/nav', { routes } ) %>
-  <h2><%= user.username %></h2>
-  <div class="post-create-container">
-      <textarea class="post-create-area" placeholder="random text..."
-       value="<%= post.content %>">   
-      </textarea>
-      <button type="submit">Submit</button>
-  </div>
+          <section class="hero is-medium has-background-light">
+            <div class="hero-body">
+              <h1 class="title">New Product</h1>
+            </div>
+          </section>
+      
+          <section class="container is-max-widescreen p-5">
+            <!-- FORM has two properties 
+                  action= path -> where are we sending our form?
+                  method= request method (GET, POST)
+            -->
+            <form action="/" method="POST">
+              <div class="field">
+                <label class="label">Post Title</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Post Title"
+                    name="title"
+                  />
+                </div>
+              </div>
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-info">Create Product</button>
+                </div>
+              </div>
+            </form>
+          </section>
 </html>
 </body>
-                                                  

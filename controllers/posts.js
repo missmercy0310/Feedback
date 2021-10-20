@@ -48,7 +48,7 @@ router.post("/", async function (req, res, next) {
     try { // body == data incoming with a request
         const data = req.body;
         await Post.create(data);
-        return res.redirect("/posts");
+        return res.redirect("/");
     } catch (error){
         console.log(error);
         req.error = error;
@@ -73,7 +73,7 @@ router.delete("/:id", function (req, res, next) {
                 req.error = error;
                 return next();
             }
-            return res.redirect("/posts");
+            return res.redirect("/");
             }
         );
     });
@@ -106,7 +106,7 @@ router.put("/:id", function (req, res, next) {
                 req.error = error;
                 return next();
             }
-            res.redirect(`/posts/${req.params.id}`);
+            res.redirect(`/${req.params.id}`);
         }
     );
 });
