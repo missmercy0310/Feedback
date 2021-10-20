@@ -13,7 +13,15 @@
       <div class="button-container">
           <button class="like">Like</button>
           <button class="comment">Add Comment</button>
-          <botton class="edit">Edit</botton>
+          <button class="edit">Edit</button>
+          <button>
+          <p class="control">
+            <form action="/posts/<%= post.id %>?_method=DELETE" method="POST" >
+              <input class="button is-danger" type="submit" value="Delete Post">
+            </form>
+          </p>
+          </button>
+          
       </div>  
       <div class="comments-container">
           </div>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
         <!-- Head partial -->
-  <%- include('../partials/head', { page: "Create Post" } ) %>
+  <%- include('../partials/head.ejs', { page: "Create Post" } ) %>
 
 <body class="has-navbar-fixed-top">
           <!-- Navbar Partial -->
-          <%- include('../partials/nav', { routes } ) %>
-  <h2><%= user.username %></h2>
+          <%- include('../partials/nav.ejs', { routes } ) %>
+  <!--<h2><%= user.username %></h2>  --->
   <div class="post-create-container">
       <textarea class="post-create-area" placeholder="random text..."
        value="">   
