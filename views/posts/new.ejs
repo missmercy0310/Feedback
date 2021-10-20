@@ -3,21 +3,17 @@
         <!-- Head partial -->
   <%- include('../partials/head', { page: "Create Post" } ) %>
 
-<body class="has-navbar-fixed-top">
+  <body class="has-navbar-fixed-top">
           <!-- Navbar Partial -->
           <%- include('../partials/nav', { routes } ) %>
           <section class="hero is-medium has-background-light">
             <div class="hero-body">
-              <h1 class="title">New Product</h1>
+              <h1 class="title">New Post</h1>
             </div>
           </section>
       
           <section class="container is-max-widescreen p-5">
-            <!-- FORM has two properties 
-                  action= path -> where are we sending our form?
-                  method= request method (GET, POST)
-            -->
-            <form action="/" method="POST">
+            <form action="/posts" method="POST">
               <div class="field">
                 <label class="label">Post Title</label>
                 <div class="control">
@@ -29,6 +25,17 @@
                   />
                 </div>
               </div>
+              <div class="field">
+                <label class="label">Post Content</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Post Content"
+                    name="content"
+                  />
+                </div>
+              </div>
               <div class="field is-grouped">
                 <div class="control">
                   <button class="button is-info">Create Product</button>
@@ -36,5 +43,5 @@
               </div>
             </form>
           </section>
+  </body>
 </html>
-</body>

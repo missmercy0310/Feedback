@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+require("dotenv").config();
+
 const MONGODB_URI = "mongodb://localhost:27017/feedback";
 
 mongoose.connect(MONGODB_URI);
