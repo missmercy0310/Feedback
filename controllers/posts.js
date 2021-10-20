@@ -38,81 +38,77 @@ router.get("/:id", function (req, res, next) {
     });
 });
 
-// Create
-router.post("/", async function (req, res, next) {
-  
-    try { // body == data incoming with a request
-    
-      await Post.create(data);
-      console.log(newPost);
-      return res.redirect("/posts");
-    } catch (error){
-      console.log(error);
-      req.error = error;
-      return next();
-    }
+// New
+router.get("/new", function (req, res) {
+    res.render("posts/new");
 });
 
-//DELETE POST 
-
-router.delete("/:id", function (req, res, next) {
-    Product.findByIdAndDelete(req.params.id, function (error, deletedPost) {
-      if (error) {
+// Create
+router.post("/", async function (req, res, next) {
+    try { // body == data incoming with a request
+        const data = req.body;
+        await Post.create(data);
+        return res.redirect("/posts");
+    } catch (error){
         console.log(error);
         req.error = error;
         return next();
-      }
-  
-      //DELETE COMMENTS OF EACH POST 
-      Comment.deleteMany(
-        { post: req.params.id },
-        function (error, deletedComments) {
-          if (error) {
+    }
+});
+
+// Delete
+router.delete("/:id", function (req, res, next) {
+    Product.findByIdAndDelete(req.params.id, function (error, deletedPost) {
+        if (error) {
             console.log(error);
             req.error = error;
             return next();
-          }
-          return res.redirect("/posts");
         }
-      );
+        // Delete comments
+        Comment.deleteMany(
+            { post: req.params.id },
+            function (error, deletedComments) {
+            if (error) {
+                console.log(error);
+                req.error = error;
+                return next();
+            }
+            return res.redirect("/posts");
+            }
+        );
     });
-  });
-  
-  // edit
-router.get("/:id/edit", function (req, res, next) {
-  Post.findById(req.params.id, function (error, foundPost) {
-    if (error) {
-      console.log(error);
-      req.error = error;
-      return next();
-    }
-
-    const context = {
-      product: foundProduct,
-    };
-
-    res.render("posts/edit", context);
-  });
 });
-  //UPDATE TO POST---    ADD UPDATE TO COMMENT 
-
-  router.put("/:id", function (req, res, next) {
-    Post.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true },
-      function (error, updatedPost) {
-        if (error) {
-          console.log(error);
-          req.error = error;
-          return next();
-        }
   
-        res.redirect(`/posts/${req.params.id}`);
-      }
+// Edit
+router.get("/:id/edit", function (req, res, next) {
+    Post.findById(req.params.id, function (error, foundPost) {
+        if (error) {
+            console.log(error);
+            req.error = error;
+            return next();
+        }
+        const context = {
+            product: foundProduct,
+        };
+        res.render("posts/edit", context);
+    });
+});
+
+//Update
+router.put("/:id", function (req, res, next) {
+    Post.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true },
+        function (error, updatedPost) {
+            if (error) {
+                console.log(error);
+                req.error = error;
+                return next();
+            }
+            res.redirect(`/posts/${req.params.id}`);
+        }
     );
-  });
-
-
+});
 
 module.exports = router;
