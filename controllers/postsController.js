@@ -78,6 +78,22 @@ router.delete("/:id", function (req, res, next) {
     });
   });
   
+  // edit
+router.get("/:id/edit", function (req, res, next) {
+  Post.findById(req.params.id, function (error, foundPost) {
+    if (error) {
+      console.log(error);
+      req.error = error;
+      return next();
+    }
+
+    const context = {
+      product: foundProduct,
+    };
+
+    res.render("posts/edit", context);
+  });
+});
   //UPDATE TO POST---    ADD UPDATE TO COMMENT 
 
   router.put("/:id", function (req, res, next) {
