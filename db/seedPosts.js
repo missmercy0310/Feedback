@@ -6,7 +6,7 @@ const posts = [
     {
         title: "Frogs Forever",
         content: "I'm working on a new story structure for a project titled Frogs Forever. Let me know what y'all think of this plot layout: 1. Frogs begin to take over the planet. 2. Frogs succeed. 3. Frogs forever.",
-        user: "616dc78fd1f477eec038e70b",
+        user: "61704c3cadbb302d8b745508",
     }
 ];
 

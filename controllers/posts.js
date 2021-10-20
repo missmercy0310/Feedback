@@ -58,8 +58,8 @@ router.post("/posts", async function (req, res, next) {
 });
 
 // Delete
-router.delete("/:id", function (req, res, next) {
-    Product.findByIdAndDelete(req.params.id, function (error, deletedPost) {
+router.delete("/posts/:id", function (req, res, next) {
+    Post.findByIdAndDelete(req.params.id, function (error, deletedPost) {
         if (error) {
             console.log(error);
             req.error = error;
