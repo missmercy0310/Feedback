@@ -44,11 +44,12 @@ router.get("/new", function (req, res) {
 });
 
 // Create
-router.post("/", async function (req, res, next) {
+router.post("/posts", async function (req, res, next) {
     try { // body == data incoming with a request
         const data = req.body;
+        data.user = req.session.currentUser.id;
         await Post.create(data);
-        return res.redirect("/posts");
+        return res.redirect("/");
     } catch (error){
         console.log(error);
         req.error = error;
@@ -106,7 +107,7 @@ router.put("/:id", function (req, res, next) {
                 req.error = error;
                 return next();
             }
-            res.redirect(`/posts/${req.params.id}`);
+            res.redirect(`/${req.params.id}`);
         }
     );
 });
