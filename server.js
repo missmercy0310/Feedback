@@ -32,7 +32,7 @@ app.use(methodOverride("_method"));
 // session config
 app.use(session({
     // where to store the sessions in mongodb
-    store: MongoStore.create({mongoUrl: process.env.MONGODB_URI_DEV}),
+    store: MongoStore.create({mongoUrl: process.env.MONGODB_URI}),
     // secret key is used to sign the cookie to say that it is valid
     secret: process.env.SECRET,
     resave: false,
