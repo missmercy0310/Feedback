@@ -7,28 +7,29 @@
           <!-- Navbar Partial -->
           <%- include('./partials/nav', { routes }) %>
 
-          <section class="hero is-medium has-background-light">
+          <section class="hero is-small has-background-light">
             <div class="hero-body">
               <p class="title">All Posts</p>
             </div>
           </section>
       
           <main class="container is-max-widescreen">
-            <div class="columns is-multiline p-5">
-              <!-- Tell user there are no products available -->
+            
+              <!-- Tell user there are no posts available -->
               <% if (posts.length === 0) { %>
                 <div class="notification is-warning">
                   No posts available.
                 </div>
               <% } %>
+              <div class="post-container">
       
               <!-- Loop through all posts -->
               <% for(let i = 0; i < posts.length; i++){ %> <% const post =
               posts[i] %>
       
-              <div class="column">
-                <article class="card">
-                  <div class="card-content">
+              
+             
+                  <div class="box" id="created-post">
                     <div class="content">
                       <h3>
                         <a href="/<%= post.id %>"><%= post.title %> </a>
@@ -37,11 +38,18 @@
                         <%= post.content %>
                       </p>
                     </div>
+                    <footer class="card-footer">
+                      <a href="#" class="card-footer-item">Edit</a>
+                      <a href="#" class="card-footer-item">Comment</a>
+                      <a href="#" class="card-footer-item">Delete</a>
+                    </footer>
                   </div>
-                </article>
-              </div>
+                  
+            
+              
               <% } %>
             </div>
+            
           </main>
 </body>
 </html>
