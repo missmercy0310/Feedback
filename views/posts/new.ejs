@@ -3,45 +3,55 @@
         <!-- Head partial -->
   <%- include('../partials/head.ejs', { page: "Create Post" } ) %>
 
-  <body class="has-navbar-fixed-top">
+<body class="has-navbar-fixed-top">
           <!-- Navbar Partial -->
-          <%- include('../partials/nav', { routes } ) %>
-          <section class="hero is-medium has-background-light">
-            <div class="hero-body">
-              <h1 class="title">New Post</h1>
-            </div>
-          </section>
-      
-          <section class="container is-max-widescreen p-5">
-            <form action="/posts" method="POST">
-              <div class="field">
-                <label class="label">Post Title</label>
-                <div class="control">
-                  <input
-                    class="input"
-                    type="text"
-                    placeholder="Post Title"
-                    name="title"
-                  />
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Post Content</label>
-                <div class="control">
-                  <input
-                    class="input"
-                    type="text"
-                    placeholder="Post Content"
-                    name="content"
-                  />
-                </div>
-              </div>
-              <div class="field is-grouped">
-                <div class="control">
-                  <button class="button is-info">Create Post</button>
-                </div>
-              </div>
-            </form>
-          </section>
-  </body>
+          <%- include('../partials/nav.ejs', { routes: [
+            { 
+              href: "/",
+              title: "Home",
+            },
+            {
+              href: "/",
+              title: "Logout",
+            },] } ) %>
+  <!--<h2><%= user.username %></h2>  --->
+  <section class="hero is-medium has-background-light">
+    <div class="hero-body">
+      <h1 class="title">New Post</h1>
+    </div>
+  </section>
+
+  <section class="container is-max-widescreen p-5">
+    <form action="/posts" method="POST">
+      <div class="field">
+        <label class="label">Post Title</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder="Post Title"
+            name="title"
+          />
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Post Content</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder="Post Content"
+            name="content"
+          />
+        </div>
+      </div>
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-info">Create Post</button>
+        </div>
+      </div>
+    </form>
+  </section>
 </html>
+</body>
+                                                  

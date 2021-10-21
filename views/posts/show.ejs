@@ -5,22 +5,39 @@
 
 <body class="has-navbar-fixed-top">
           <!-- Navbar Partial -->
-          <%- include('../partials/nav', { routes } ) %>
+          <%- include('../partials/nav', { routes: [
+            { 
+              href: "/",
+              title: "Home",
+            },
+            {
+              href: "/",
+              title: "Logout",
+            },] } ) %>
   <section class="post-container">
       <div class="post-display-container">
         <p><%= post.content %></p>
       </div>
       <div class="button-container">
           <button class="like">Like</button>
-          <button class="comment">Add Comment</button>
+          <button class="add-comment-button">Add Comment</button>
+          <div class="comment-box">
+            <textarea id="comment-text-box"></textarea>
+          </div>
+
+          <% if(user.id == post.user){ %>
+
           <div class="control">
             <a href="/<%= post.id %>/edit" class="button is-info">Edit Post</a>
           </div>
+          
           <p class="control">
             <form action="/posts/<%= post.id %>?_method=DELETE" method="POST">
               <input class="button is-danger" type="submit" value="Delete Post">
             </form>
           </p>
+
+          <% } %>
           
       </div>  
       <div class="comments-container">
