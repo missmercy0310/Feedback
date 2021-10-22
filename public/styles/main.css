@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+}
+
+section {
+  padding-top: 10px;
+}
+
+h3 {
+  font-family: "EB Garamond", serif;
+}
+
+.title {
+  font-family: "EB Garamond", serif;
+  font-size: 20px;
+  color: white;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.app-name {
+  font-size: 33px;
+  font-weight: bolder;
+}
+
+.block:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.post-container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+}
+
+#hero-container {
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+}
+
+#title-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: -24px;
+}
+
+#comment-text-box {
+  display: none;
+}
+
+#created-post {
+  display: block;
+  margin: 10px auto;
+}
+
+#edit-button-box {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#delete-button {
+  display: flex;
+  flex-direction: reverse-row;
+}
+
+#delete-form {
+  display: flex;
+  margin-right: 0px;
+  margin-left: auto;
+}
+
+/*# sourceMappingURL=main.css.map */

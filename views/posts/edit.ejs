@@ -5,14 +5,28 @@
 
 <body class="has-navbar-fixed-top">
           <!-- Navbar Partial -->
-          <%- include('../partials/nav', { routes } ) %>
-          <section class="hero is-medium has-background-light">
+          <%- include('../partials/nav', { routes: [
+            {
+              href: "/",
+              title: "Home",
+            
+            },
+            {
+              href: "/new",
+              title: "Create Post",
+            },
+            {
+              href: "/",
+              title: "Logout",
+            },
+            ] }) %>
+          <section class="hero is-small has-background-light">
             <div class="hero-body">
               <h1 class="title">Edit <%= post.title %></h1>
             </div>
           </section>
           <section class="container is-max-widescreen p-5">
-            <form action="/<%= post.id %>?_method=PUT" method="POST">
+            <form class="box" action="/<%= post.id %>?_method=PUT" method="POST">
               <div class="field">
                 <label class="label">Post Title</label>
                 <div class="control">

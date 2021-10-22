@@ -5,28 +5,80 @@
 
 <body class="has-navbar-fixed-top">
           <!-- Navbar Partial -->
-          <%- include('../partials/nav', { routes } ) %>
-  <section class="post-container">
-      <div class="post-display-container">
-        <p><%= post.content %></p>
+          <%- include('../partials/nav', { routes: [
+            { 
+              href: "/",
+              title: "Home",
+            },
+            {
+              href: "/",
+              title: "Logout",
+            },] } ) %>
+  <section class="hero is-small has-background-grey-light">
+      <div id="hero-container" class="hero-body">
+         <div id="title-container">
+            <p class="title"><%= user.username %></p>
+         </div>
       </div>
-      <div class="button-container">
-          <button class="like">Like</button>
-          <button class="comment">Add Comment</button>
-          <div class="control">
-            <a href="/<%= post.id %>/edit" class="button is-info">Edit Post</a>
-          </div>
-          <p class="control">
-            <form action="/posts/<%= post.id %>?_method=DELETE" method="POST">
-              <input class="button is-danger" type="submit" value="Delete Post">
-            </form>
+  </section>
+  <main class="container hero is-max-widescreen is-link">
+    <div class="post-container">
+      <div class="box" id="created-post">
+        <div class="content">
+          <h3>
+            <a href="/<%= post.id %>"><%= post.title %> </a>
+          </h3>
+          <p>
+             <%= post.content %>
           </p>
+        </div>
+        <hr>
+      <div class="button-container">
+       <!----   <button class="like">Like</button> -->
+          <button class="add-comment-button">Add Comment</button>
+          <div class="comment-box">
+            
+                <p class="control">
+                  <form id="comment-text-box" action="/comments/<%= post.id %>" method="POST">
+                    <textarea 
+                      rows="3"
+                      class="input"
+                      placeholder="Add comment..."
+                      name="content"
+                      required></textarea>
+                    <input  class="button is-info" type="submit" placeholder="leave comment...">
+                  </form>
+                </p>
+        
+          </div>
+
+          <% if(user.id == post.user){ %>
+          <div id="edit-button-box">
+            <div class="control">
+              <a href="/<%= post.id %>/edit" class="button is-info">Edit Post</a>
+            </div>
+          
+            <p class="control">
+              <form action="/posts/<%= post.id %>?_method=DELETE" method="POST">
+                <input class="button is-danger" type="submit" value="Delete Post">
+              </form>
+            </p>
+          </div>
+          <% } %>
           
       </div>  
-      <div class="comments-container">
-          </div>
-      </div>
+          <div class="comments-container">
 
-    </section>
+            <% comments.forEach(comment => { %>
+              
+                <p class="comment-username"><%= comment.content %></p> 
+                
+            <% }) %>
+
+
+          </div>
+    </div>
+  </main>
+    
 </body>
 </html>

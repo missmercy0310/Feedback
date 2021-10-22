@@ -3,3 +3,10 @@ $(".navbar-burger").click(function() {
     $(".navbar-burger").toggleClass("is-active");
     $(".navbar-menu").toggleClass("is-active");
 });
+
+
+
+$(".add-comment-button").on('click',function(){
+    $('#comment-text-box').css("display", "block");
+});          
+

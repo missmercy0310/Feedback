@@ -7,6 +7,15 @@ const routes = [
         href: "/new",
         title: "Create Post",
     },
+    
+    {
+        href: "/logout",
+        title: "Logout",
+    },
+
+];
+
+const authRoutes = [ 
     {
         href: "/login",
         title: "Login",
@@ -14,11 +23,18 @@ const routes = [
     {
         href: "/signup",
         title: "Sign Up",
-    }
-];
+    },
+]
+
 
 module.exports = function navLinks(req, res, next) {
     // locals
-    res.locals.routes = routes;
+    if(req.session.currentUser){
+        res.locals.routes = routes;
+        res.locals.user = req.session.currentUser;
+    } else {
+        res.locals.routes = authRoutes;
+    }
     next();
 }
+
