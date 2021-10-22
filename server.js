@@ -56,6 +56,7 @@ app.use(require("./utils/navlinks"));
   return res.render("home");
 }); */
 app.use("/", controllers.post);
+app.use("/comments", controllers.comment);
 
 // == Auth
 app.use("/", controllers.auth);

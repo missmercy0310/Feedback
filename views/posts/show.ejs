@@ -14,7 +14,7 @@
               href: "/",
               title: "Logout",
             },] } ) %>
-  <section class="post-container">
+  <section class="">
       <div class="post-display-container">
         <p><%= post.content %></p>
       </div>
@@ -22,7 +22,19 @@
           <button class="like">Like</button>
           <button class="add-comment-button">Add Comment</button>
           <div class="comment-box">
-            <textarea id="comment-text-box"></textarea>
+            
+                <p class="control">
+                  <form id="comment-text-box" action="/comments/<%= post.id %>" method="POST">
+                    <textarea 
+                      class="input"
+                      placeholder="Add comment..."
+                      name="content"
+                      required></textarea>
+                    <input  class="button is-info" type="submit" placeholder="leave comment...">
+                  </form>
+                </p>
+                
+                
           </div>
 
           <% if(user.id == post.user){ %>
