@@ -32,9 +32,10 @@
              <%= post.content %>
           </p>
         </div>
+        <hr>
       <div class="button-container">
        <!----   <button class="like">Like</button> -->
-        <button class="add-comment-button">Add Comment</button>
+          <button class="add-comment-button">Add Comment</button>
           <div class="comment-box">
             
                 <p class="control">
@@ -47,7 +48,8 @@
                       required></textarea>
                     <input  class="button is-info" type="submit" placeholder="leave comment...">
                   </form>
-                </p>        
+                </p>
+        
           </div>
 
           <% if(user.id == post.user){ %>
@@ -56,8 +58,8 @@
               <a href="/<%= post.id %>/edit" class="button is-info">Edit Post</a>
             </div>
           
-            <p id="delete-button" class="control">
-              <form id="delete-form" action="/posts/<%= post.id %>?_method=DELETE" method="POST">
+            <p class="control">
+              <form action="/posts/<%= post.id %>?_method=DELETE" method="POST">
                 <input class="button is-danger" type="submit" value="Delete Post">
               </form>
             </p>
@@ -65,9 +67,9 @@
           <% } %>
           
       </div>  
-      <div class="comments-container">
+          <div class="comments-container">
           </div>
-      </div>
+    </div>
   </main>
     
 </body>
