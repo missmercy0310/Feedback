@@ -10,13 +10,8 @@ nav {
   padding: 12px;
 }
 
-main {
-  width: 100vw;
-  height: 100vh;
-}
-
 section {
-  padding-top: 15px;
+  padding-top: 10px;
 }
 
 h3 {
@@ -52,6 +47,19 @@ h3 {
   max-width: 700px;
 }
 
+#hero-container {
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+}
+
+#title-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: -24px;
+}
+
 #comment-text-box {
   display: none;
 }
@@ -59,6 +67,24 @@ h3 {
 #created-post {
   display: block;
   margin: 10px auto;
+}
+
+#edit-button-box {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#delete-button {
+  display: flex;
+  flex-direction: reverse-row;
+}
+
+#delete-form {
+  display: flex;
+  margin-right: 0px;
+  margin-left: auto;
 }
 
 /*# sourceMappingURL=main.css.map */

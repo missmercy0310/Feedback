@@ -17,12 +17,14 @@
           }, ]}) %>
 
           <section class="hero is-small has-background-grey-light">
-            <div class="hero-body">
+            <div id="hero-container" class="hero-body">
+              <div id="title-container">
               <p class="title">ALL POSTS</p>
+              </div>
             </div>
           </section>
       
-          <main class="container hero is-max-widescreen is-link">
+          <main class="container hero is-link">
             
               <!-- Tell user there are no posts available -->
               <% if (posts.length === 0) { %>
@@ -33,7 +35,7 @@
               <div class="post-container">
       
               <!-- Loop through all posts -->
-              <% for(let i = 0; i < posts.length; i++){ %> <% const post =
+              <% for(let i = posts.length - 1; i >=0; i-- ){ %> <% const post =
               posts[i] %>
       
               
@@ -48,7 +50,7 @@
                       </p>
                     </div>
                     <footer class="card-footer">
-                      <a href="#" class="card-footer-item">Edit</a>
+                      <a href="/<%= post.id %>" class="card-footer-item">Edit</a>
                       <a href="#" class="card-footer-item">Comment</a>
                       <a href="#" class="card-footer-item">Delete</a>
                     </footer>
