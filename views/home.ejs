@@ -5,15 +5,24 @@
 
 <body class="has-navbar-fixed-top">
           <!-- Navbar Partial -->
-          <%- include('./partials/nav', { routes }) %>
+          <%- include('./partials/nav', { routes: [
+            {
+              href: "/new",
+              title: "Create Post",
+            },
+          
+          {
+              href: "/logout",
+              title: "Logout",
+          }, ]}) %>
 
-          <section class="hero is-small has-background-light">
+          <section class="hero is-small has-background-grey-light">
             <div class="hero-body">
-              <p class="title">All Posts</p>
+              <p class="title">ALL POSTS</p>
             </div>
           </section>
       
-          <main class="container is-max-widescreen">
+          <main class="container hero is-max-widescreen is-link">
             
               <!-- Tell user there are no posts available -->
               <% if (posts.length === 0) { %>

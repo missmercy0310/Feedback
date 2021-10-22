@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 nav {
   display: flex;
   flex-direction: row;
@@ -5,17 +9,40 @@ nav {
   align-items: center;
   padding: 12px;
 }
-nav .nav-links {
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+section {
+  padding-top: 15px;
+}
+
+h3 {
+  font-family: "EB Garamond", serif;
+}
+
+.title {
+  font-family: "EB Garamond", serif;
+  font-size: 20px;
+  color: white;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 20px;
+}
+
+.app-name {
+  font-size: 33px;
+  font-weight: bolder;
 }
 
 .block:not(:last-child) {
   margin-bottom: 1.5rem;
-}
-
-#created-post {
-  display: block;
-  margin: 6px auto;
 }
 
 .post-container {
@@ -27,6 +54,11 @@ nav .nav-links {
 
 #comment-text-box {
   display: none;
+}
+
+#created-post {
+  display: block;
+  margin: 10px auto;
 }
 
 /*# sourceMappingURL=main.css.map */

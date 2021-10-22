@@ -14,10 +14,22 @@
               href: "/",
               title: "Logout",
             },] } ) %>
-  <section class="">
-      <div class="post-display-container">
-        <p><%= post.content %></p>
-      </div>
+    <section class="hero is-small has-background-grey-light">
+    <div class="hero-body">
+    <p class="title"><%= user.username %></p>
+    </div>
+  </section>
+  <main class="container hero is-max-widescreen is-link">
+      <div class="post-container">
+            <div class="box" id="created-post">
+              <div class="content">
+                <h3>
+                  <a href="/<%= post.id %>"><%= post.title %> </a>
+                </h3>
+                <p>
+                  <%= post.content %>
+                </p>
+              </div>
       <div class="button-container">
           <button class="like">Like</button>
           <button class="add-comment-button">Add Comment</button>
@@ -26,6 +38,7 @@
                 <p class="control">
                   <form id="comment-text-box" action="/comments/<%= post.id %>" method="POST">
                     <textarea 
+                      rows="3"
                       class="input"
                       placeholder="Add comment..."
                       name="content"
@@ -55,7 +68,7 @@
       <div class="comments-container">
           </div>
       </div>
-
-    </section>
+  </main>
+    
 </body>
 </html>
