@@ -20,11 +20,12 @@
               title: "Logout",
             },
             ] }) %>
-          <section class="hero is-small has-background-light">
-            <div class="hero-body">
-              <h1 class="title">Edit <%= post.title %></h1>
+          <section class="hero is-small has-background is-link">
+          <div id="hero-container" class="hero-body">
+            <div id="title-container">
+              <p class="title">Edit <%= post.title %></p>
             </div>
-          </section>
+          </div>
           <section class="container is-max-widescreen p-5">
             <form class="box" action="/<%= post.id %>?_method=PUT" method="POST">
               <div class="field">
@@ -42,13 +43,13 @@
               <div class="field">
                 <label class="label">Post Content</label>
                 <div class="control">
-                  <input
-                    class="input"
-                    type="text"
-                    placeholder="Post Content"
-                    name="content"
-                    value="<%= post.content %>"
-                  />
+                  <textarea
+                    id="create-post-textbox"
+                    rows="12"
+                    cols="88"
+                    value=""
+                    name="content"><%= post.content %></textarea>
+                    
                 </div>
               </div>
               <div class="field is-grouped">
