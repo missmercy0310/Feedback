@@ -59,7 +59,7 @@ router.post("/login", async function (req, res, next) {
         const match = await bcrypt.compare(req.body.password, foundUser.password);
         // --- if no match -> tell the user password/email ivalid
         if (!match) {
-            return res.render("/login");
+            return res.render("auth/login");
         }
         // --- if match -> issue cookie
         // add the user's authentication to the cookie

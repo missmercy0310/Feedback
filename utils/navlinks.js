@@ -27,11 +27,11 @@ const authRoutes = [
 ]
 
 
-module.exports = function navLinks(req, res, next) {
+module.exports = async function navLinks(req, res, next) {
     // locals
     if(req.session.currentUser){
         res.locals.routes = routes;
-        res.locals.user = req.session.currentUser;
+        res.locals.user = await User.findById(req.session.currentUser);
     } else {
         res.locals.routes = authRoutes;
     }

@@ -30,7 +30,7 @@
               <a href="/<%= post.id %>"> <%= post.title %> </a>
             </h3>
           </div>
-          <p id="author">by: <%= user.username %></p>
+          <p id="author">by: <%= post.user.username %></p>
         </br>
           <p id="post-content"><%= post.content %></p>
        
@@ -58,6 +58,7 @@
         
           </div>
 
+          <% if(typeof user != "undefined"){ %>
           <% if(user.id == post.user){ %>
           <div id="edit-button-box">
             <div id="edit-button" class="control">
@@ -72,6 +73,7 @@
             </div>
           </div>
           <% } %>
+          <% } %>
           
         
     </br>
@@ -80,7 +82,7 @@
               <% const comment = comments[i]; %>
            
               
-                <p class="comment-username">user: <%= user.username %></p>
+                <p class="comment-username">user: <%= comment.user.username %></p>
                   <p><%= comment.content %></p> 
                   <div id="date-holder">
                     <p id="created-at"><%= comment.createdAt %></p>

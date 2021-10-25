@@ -7,7 +7,7 @@ const { Post, Comment, User } = require("../models");
 // Index
 router.get("/", async function (req, res) {
     try {
-        const allPosts = await Post.find({});
+        const allPosts = await Post.find({}).populate("user");
         const context = {
             posts: allPosts,
         };
@@ -34,8 +34,8 @@ router.get("/:id", function (req, res, next) {
                 comments: foundComments
             };
             return res.render("posts/show", context);
-        });
-    });
+        }).populate("user");
+    }).populate("user");
 });
 
 // New
