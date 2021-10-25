@@ -59,7 +59,7 @@
           </div>
 
           <% if(typeof user != "undefined"){ %>
-          <% if(user.id == post.user){ %>
+          <% if(user.id == post.user.id){ %>
           <div id="edit-button-box">
             <div id="edit-button" class="control">
               <a href="/<%= post.id %>/edit" class="button is-info">Edit Post</a>

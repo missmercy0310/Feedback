@@ -59,7 +59,7 @@
                     
                     <footer id="post-footer" class="card-footer">
                       <% if(typeof user != "undefined"){ %>
-                      <% if(user.id == post.user){ %>
+                      <% if(user.id == post.user.id){ %>
                       <a href="/<%= post.id %>/edit" class="card-footer-item">Edit</a>
                       <% } %>
                       <% } %>
