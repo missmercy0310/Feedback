@@ -2,6 +2,16 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #f0f2f5;
+}
+
+main {
+  background-color: #f0f2f5;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
 nav {
   display: flex;
   flex-direction: row;
@@ -12,28 +22,45 @@ nav {
 
 section {
   padding-top: 10px;
+  background-color: #8c8c8c;
 }
 
-h3 {
-  font-family: "EB Garamond", serif;
-}
-
-.title {
-  font-family: "EB Garamond", serif;
-  font-size: 20px;
-  color: white;
+.app-name {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 10px;
 }
 
 .navbar-links {
+  margin-right: 17px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
 }
 
-.app-name {
-  font-size: 33px;
-  font-weight: bolder;
+#hero-container {
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+}
+
+.title {
+  font-family: "Ibarra Real Nova", serif;
+  font-size: 20px;
+  color: white;
+  font-weight: 500;
+}
+
+#title-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: -24px;
+}
+
+#post-title {
+  color: #4a4a4a;
 }
 
 .block:not(:last-child) {
@@ -47,26 +74,69 @@ h3 {
   max-width: 700px;
 }
 
-#hero-container {
-  padding-bottom: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 700px;
+#created-post {
+  display: flexbox;
+  margin: 20px auto;
+}
+#created-post #main-content-container {
+  border: #d0ced4;
 }
 
-#title-container {
+#title-user-display {
   display: flex;
   flex-direction: row;
-  margin-left: -24px;
+  justify-content: space-between;
+  align-items: center;
+}
+#title-user-display h3 {
+  font-family: "Ibarra Real Nova", serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: #4a4a4a;
+}
+
+#created-by {
+  display: flex;
+  flex-direction: row;
+}
+#created-by p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#post-content {
+  margin-bottom: 8px;
+}
+
+#date-holder {
+  height: 15px;
+  width: 110px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+#created-at {
+  overflow: hidden;
+  font-size: 12px;
+  color: #8c8c8c;
+}
+
+#username-post p {
+  font-weight: 400;
+}
+
+#create-post-textbox {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #comment-text-box {
   display: none;
 }
 
-#created-post {
-  display: block;
-  margin: 10px auto;
+#comment-username p {
+  font-size: 10px;
 }
 
 #edit-button-box {
@@ -75,10 +145,13 @@ h3 {
   flex-direction: row;
   justify-content: space-between;
 }
-
-#delete-button {
-  display: flex;
-  flex-direction: reverse-row;
+#edit-button-box #edit-button {
+  justify-self: flex-start;
+}
+#edit-button-box #delete-button p {
+  justify-self: flex-end;
+  margin-right: 0px;
+  margin-left: auto;
 }
 
 #delete-form {
