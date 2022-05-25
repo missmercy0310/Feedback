@@ -50,7 +50,6 @@ section {
 }
 
 .title {
-    font-family: 'Ibarra Real Nova', serif;
     font-size: 20px;
     color: white;
     font-weight: 500;
@@ -71,7 +70,7 @@ section {
 
 .block:not(:last-child) {
     margin-bottom: 1.5rem;
-  }
+}
 
 .post-container {
     display: block;
@@ -98,7 +97,6 @@ section {
     align-items: center;
     
     h3 {
-        font-family: 'Ibarra Real Nova', serif;
         font-size: 22px;
         font-weight: 500;
         color: rgb(74, 74, 74);
