@@ -1,0 +1,184 @@
+* { 
+    box-sizing: border-box;
+}
+body {
+    
+    background-color: rgb(240, 242, 245);
+    
+}
+main {
+    background-color: rgb(240, 242, 245);
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+}
+
+section {
+    padding-top: 10px;
+    background-color: rgb(140, 140, 140);
+
+}
+
+.app-name {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 10px;
+
+}
+
+.navbar-links {
+    margin-right: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    
+
+}
+#hero-container {
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+    
+}
+
+.title {
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+}
+
+#title-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: -24px;
+
+}
+
+#post-title {
+    color:rgb(74, 74, 74);
+}
+
+
+
+.block:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
+.post-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+}
+
+#created-post {
+    display: flexbox;
+    margin: 20px auto;
+
+    #main-content-container {
+        border: rgb(208, 206, 212);
+    }
+
+}
+
+
+#title-user-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    h3 {
+        font-size: 22px;
+        font-weight: 500;
+        color: rgb(74, 74, 74);
+    }
+    
+  
+}
+
+#created-by {
+    display: flex;
+    flex-direction: row;
+    p{  font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+
+
+
+#post-content {
+    margin-bottom: 8px;
+
+}
+
+#date-holder {
+    height: 15px;
+    width: 110px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    
+}
+#created-at {
+    overflow: hidden;
+    font-size: 12px;
+    color:rgb(140, 140, 140);
+}
+
+#username-post p{
+    font-weight: 400;
+}
+
+
+
+
+
+#create-post-textbox {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+#comment-text-box {
+    display: none;
+}
+#comment-username p {
+    font-size: 10px;
+
+}
+
+#edit-button-box {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+#edit-button {
+    justify-self: flex-start;
+}
+#delete-button p{
+    justify-self: flex-end;
+    margin-right: 0px;
+    margin-left: auto;
+    
+  }
+
+}
+
+
+#delete-form {
+    display: flex;
+    margin-right: 0px;
+    margin-left: auto;
+    
+}

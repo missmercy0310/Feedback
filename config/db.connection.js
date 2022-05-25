@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
-const MONGODB_URI = "mongodb://localhost:27017/feedback";
+require("dotenv").config();
 
-mongoose.connect(MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI, {});
 
 mongoose.connection.on("connected", function () {
   console.log("Mongodb has connected... ❤️");

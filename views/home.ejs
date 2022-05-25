@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+        <!-- Head partial -->
+  <%- include('./partials/head', { page: "Homepage" } ) %>
+
+<body class="has-navbar-fixed-top">
+          <!-- Navbar Partial -->
+          <%- include('./partials/nav', { routes: [
+            {
+              href: "/new",
+              title: "Create Post",
+            },
+          
+          {
+              href: "/logout",
+              title: "Logout",
+          }, ]}) %>
+
+          <section class="hero is-small has-background is-link">
+            <div id="hero-container" class="hero-body">
+              <div id="title-container">
+              <p class="title">ALL POSTS</p>
+              </div>
+            </div>
+          </section>
+          <main>
+      
+          
+            
+              <!-- Tell user there are no posts available -->
+              <% if (posts.length === 0) { %>
+            <div class="notification is-warning">
+                  No posts available.
+            </div>
+              <% } %>
+            <div class="post-container">
+      
+              <!-- Loop through all posts -->
+              <% for(let i = posts.length - 1; i >=0; i-- ){ %> 
+              <% const post = posts[i]; %>
+                  <div class="box" id="created-post">
+                    <div class="main-content-container">
+                      <div id="title-user-display">
+                        <h3 class="post-title">
+                          <a href="/<%= post.id %>"> <%= post.title %> </a>
+                        </h3>
+                      </div>
+                      <p id="author" >by: <%= post.user.username %></p>
+                     </br>
+                      <p id="post-content"><%= post.content %></p>
+                   
+                        
+                     <div id="date-holder">
+                       <p id="created-at"><%= post.createdAt %></p>
+                     </div>
+                    </div>
+                    <hr>
+                                            
+                    
+                    <footer id="post-footer" class="card-footer">
+                      <% if(typeof user != "undefined"){ %>
+                      <% if(user.id == post.user.id){ %>
+                      <a href="/<%= post.id %>/edit" class="card-footer-item">Edit</a>
+                      <% } %>
+                      <% } %>
+                      <a href="/<%= post.id %>" class="card-footer-item">Comment</a>
+                     
+                    </footer>
+                  </div>
+              <% } %>
+            </div>
+          </main>
+              
+                       
+         
+</body>
+</html>
